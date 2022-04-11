@@ -1,0 +1,45 @@
+What is needed in the project?
+
+Objects:
+    Crop (parent)
+     - sunLightReceived
+     - waterReceived
+     - daysWithSoil
+     - bugs
+     - disease
+     - health
+
+    Plant1 {Tulip} (child)
+    Requires:
+        + medium amount of water, sunlight and change soil every 3 days
+        
+    Plant2 {cactus} (child)
+    Requires:
+        + low amount of water
+        + high amount of sunlight
+        + change soil every 10 days
+        
+    Plant3 {Echeveria} (child)
+    Requirements:
+        + medium sunlight exposure
+        + low amount of water
+        + change soil every 5 days
+
+Functions:
+    - nextDay() [increases or decreases stats depending on what the user did]
+    {global}
+    
+    - addWater() [increase water on plant]
+    {crop/inherited}
+    
+    - getCloserToSun [increases the sunlight received]
+    {crop/inherited}
+    
+    - changeSoil [resets the daysWithSoil var]
+    {crop/inherited}
+    
+    - removeBugs [resets/decreases bugs on crop]
+    {crop/inherited}
+    
+    - giveMedicine [will set var disease to false]
+    {crop/inherited}
