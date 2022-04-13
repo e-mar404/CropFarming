@@ -15,6 +15,7 @@ class Crop{
     public:
     // Constructor
         Crop();
+        Crop(std::string typeOfPlant);
     
     // Overloaded Constructor for loading game
         Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma);

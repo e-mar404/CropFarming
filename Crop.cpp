@@ -6,6 +6,8 @@
 //
 
 #include "Crop.h"
+#include "Tulip.h"
+#include "Eucalyptus.h"
 
 Crop::Crop(){
     health = 100;
@@ -16,6 +18,17 @@ Crop::Crop(){
     bugs = false;
     disease = false;
     ligma = false;
+}
+
+Crop::Crop(std::string typeOfPlant){
+    
+    if(typeOfPlant == "Tulip"){
+        Tulip userPlant;
+    }
+    
+    if(typeOfPlant == "Eucalyptus"){
+        Eucalyptus userPlant;
+    }
 }
 
 Crop::Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma){
