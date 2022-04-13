@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D548436280660A700891B33 /* Tulip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D548435280660A700891B33 /* Tulip.cpp */; };
+		0D548439280660C200891B33 /* Eucalyptus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D548438280660C200891B33 /* Eucalyptus.cpp */; };
 		0D9AB4BA28039E67009E2C5D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9AB4B928039E67009E2C5D /* main.cpp */; };
+		0D9AB4C62803ADE1009E2C5D /* Crop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9AB4C42803ADE1009E2C5D /* Crop.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D5484342806609900891B33 /* Tulip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tulip.h; sourceTree = "<group>"; };
+		0D548435280660A700891B33 /* Tulip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tulip.cpp; sourceTree = "<group>"; };
+		0D548437280660B500891B33 /* Eucalyptus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Eucalyptus.h; sourceTree = "<group>"; };
+		0D548438280660C200891B33 /* Eucalyptus.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Eucalyptus.cpp; sourceTree = "<group>"; };
 		0D9AB4B628039E67009E2C5D /* CropFarming */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CropFarming; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9AB4B928039E67009E2C5D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0D9AB4C22803A5DA009E2C5D /* ProjectPlan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectPlan.txt; sourceTree = "<group>"; };
+		0D9AB4C42803ADE1009E2C5D /* Crop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Crop.cpp; sourceTree = "<group>"; };
+		0D9AB4C72803AE19009E2C5D /* Crop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Crop.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,13 @@
 			isa = PBXGroup;
 			children = (
 				0D9AB4B928039E67009E2C5D /* main.cpp */,
+				0D9AB4C72803AE19009E2C5D /* Crop.h */,
+				0D9AB4C42803ADE1009E2C5D /* Crop.cpp */,
+				0D5484342806609900891B33 /* Tulip.h */,
+				0D548435280660A700891B33 /* Tulip.cpp */,
+				0D548437280660B500891B33 /* Eucalyptus.h */,
+				0D548438280660C200891B33 /* Eucalyptus.cpp */,
+				0D9AB4C22803A5DA009E2C5D /* ProjectPlan.txt */,
 			);
 			path = CropFarming;
 			sourceTree = "<group>";
@@ -119,7 +136,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D548436280660A700891B33 /* Tulip.cpp in Sources */,
 				0D9AB4BA28039E67009E2C5D /* main.cpp in Sources */,
+				0D548439280660C200891B33 /* Eucalyptus.cpp in Sources */,
+				0D9AB4C62803ADE1009E2C5D /* Crop.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
