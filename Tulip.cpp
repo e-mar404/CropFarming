@@ -10,4 +10,4 @@
 
 void Tulip::getInfo(){
     std::cout << "Info about tulip\n";
-}
+} 

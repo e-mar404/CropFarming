@@ -62,6 +62,6 @@ class Crop{
     // Instant death
         bool ligma;
         
-};
+}; 
 
 #endif /* Crop_h */

@@ -10,5 +10,5 @@
 
 void Eucalyptus::getInfo(){
     std::cout << "Info about eucalyptus\n";
-}
+} 
 

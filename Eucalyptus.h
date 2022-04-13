@@ -30,6 +30,6 @@ class Eucalyptus: public Crop{
     private:
         std::string name;
         
-};
+}; 
 
 #endif /* Eucalyptus_h */

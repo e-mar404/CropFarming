@@ -29,6 +29,6 @@ class Tulip: public Crop{
         
     private:
         std::string name;
-};
+}; 
 
 #endif /* Tulip_h */

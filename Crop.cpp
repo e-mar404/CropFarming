@@ -30,4 +30,4 @@ Crop::Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWith
     bugs = _bugs;
     disease = _disease;
     ligma = _ligma;
-}
+} 
