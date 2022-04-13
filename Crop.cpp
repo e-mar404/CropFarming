@@ -30,4 +30,13 @@ Crop::Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWith
     bugs = _bugs;
     disease = _disease;
     ligma = _ligma;
-} 
+}
+
+void Crop::nextDay(){
+    // Set seed for random component of game
+    srand((unsigned int) time(NULL));
+    
+    // Increase daysAlive
+    this->setDaysAlive(this->getDaysAlive() + 1);
+    
+}

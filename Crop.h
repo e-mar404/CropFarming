@@ -49,6 +49,9 @@ class Crop{
     // Virtual funciton that will give the description and ranges of the type of plant
         virtual void getInfo() = 0;
     
+    // NextDay Function that will update and give random stats to the plant
+        void nextDay();
+    
     protected:
     // Vars that cant be interacted with
         int health;

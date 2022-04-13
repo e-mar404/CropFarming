@@ -6,23 +6,22 @@
 //
 
 #include <iostream>
+#include <time.h>
 #include "Crop.h"
 #include "Tulip.h"
 #include "Eucalyptus.h"
-
 
 using std::cout, std::cin, std::endl, std::string;
 
 
 int main() {
     
-    
     cout << "Choose a plant: (1)Tulip -or- (2)Eucalyptus\n";
     
     int plantChoice;
     cin >> plantChoice;
     
-    // Game if user chose Tulips this dick
+    // Game if user chose Tulips on this dick
     if (plantChoice == 1) {
         // Creation of plant type tulip
         Tulip *userPlant = new Tulip();
@@ -38,6 +37,11 @@ int main() {
         cout << "Loading game for " << userPlant->getName() << "..." << endl;
         cout << "Here is some information about your plant\n";
         userPlant->getInfo();
+        
+        // Main game loop that runs while the plant is alive
+        while (userPlant->getHealth() > 0) {
+            userPlant->nextDay();
+        }
         
     }
     
@@ -55,11 +59,13 @@ int main() {
         //Loading sreen for plant
         cout << "Loading game for " << userPlant->getName() << "..." << endl;
         cout << "Here is some information about your plant\n";
-        //userPlant->getInfo();
+        userPlant->getInfo();
+        
+        // Main game loop that runs while the plant is alive
+        while (userPlant->getHealth() > 0) {
+            userPlant->nextDay();
+        }
     }
- 
-    
-
     
     
     return 0;
