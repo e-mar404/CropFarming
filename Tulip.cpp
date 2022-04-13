@@ -6,3 +6,8 @@
 //
 
 #include "Crop.h"
+#include "Tulip.h"
+
+void Tulip::getInfo(){
+    std::cout << "Info about tulip\n";
+}

@@ -15,7 +15,6 @@ class Crop{
     public:
     // Constructor
         Crop();
-        Crop(std::string typeOfPlant);
     
     // Overloaded Constructor for loading game
         Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma);
@@ -47,6 +46,8 @@ class Crop{
     
     // Virtual function that will get the type of crop to save the game
         virtual std::string getType() = 0;
+    // Virtual funciton that will give the description and ranges of the type of plant
+        virtual void getInfo() = 0;
     
     protected:
     // Vars that cant be interacted with

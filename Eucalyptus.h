@@ -13,17 +13,22 @@ class Eucalyptus: public Crop{
     public:
     // Constructor
         Eucalyptus(): Crop(){
-            return;
+            name = "noName";
         }
     // Overloaded
-        Eucalyptus(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma): Crop(_health, _daysAlive, _water, _sunLight, _daysWithSoil, _bugs, _disease, _ligma){
-            return;
+        Eucalyptus(std::string _name, int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma): Crop(_health, _daysAlive, _water, _sunLight, _daysWithSoil, _bugs, _disease, _ligma){
+            name = _name;
         }
         
-    // Get Type
-    std::string getType() {return "Eucalyptus\n";}
+    // Get/Set functions
+        void setName(std::string _name) {name = _name;}
+        
+        std::string getType() {return "Eucalyptus\n";}
+        std::string getName() {return name;}
+        void getInfo();
     
     private:
+        std::string name;
         
 };
 

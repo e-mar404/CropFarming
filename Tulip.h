@@ -13,18 +13,22 @@ class Tulip: public Crop{
     public:
     // Constructor
         Tulip(): Crop(){
-            std::cout << "";
+            name = "noName";
         }
     // Overloaded
-        Tulip(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma): Crop(_health, _daysAlive, _water, _sunLight, _daysWithSoil, _bugs, _disease, _ligma){
-            std::cout << "";
+        Tulip(std::string _name, int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma): Crop(_health, _daysAlive, _water, _sunLight, _daysWithSoil, _bugs, _disease, _ligma){
+            name = _name;
         }
         
-    // Get Type
-    std::string getType() {return "Tulip\n";}
-    
-    private:
+    // Get/set functions
+        void setName(std::string _name) {name = _name;}
         
+        std::string getType() {return "Tulip\n";}
+        std::string getName() {return name;}
+        void getInfo();
+        
+    private:
+        std::string name;
 };
 
 #endif /* Tulip_h */

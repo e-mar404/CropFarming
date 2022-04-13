@@ -20,16 +20,6 @@ Crop::Crop(){
     ligma = false;
 }
 
-Crop::Crop(std::string typeOfPlant){
-    
-    if(typeOfPlant == "Tulip"){
-        Tulip userPlant;
-    }
-    
-    if(typeOfPlant == "Eucalyptus"){
-        Eucalyptus userPlant;
-    }
-}
 
 Crop::Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma){
     health = _health;
