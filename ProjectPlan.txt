@@ -14,13 +14,8 @@ OBJECTS:
     Requires:
         + medium amount of water, sunlight and change soil every 3 days
         
-    Plant2 {cactus} (child)
-    Requires:
-        + low amount of water
-        + high amount of sunlight
-        + change soil every 10 days
         
-    Plant3 {Echeveria} (child)
+    Plant3 {Eucalyptus} (child)
     Requirements:
         + medium sunlight exposure
         + low amount of water
@@ -76,7 +71,7 @@ While the plant's health is above 0{
     
     + nextDay() -> give stats of plant and any advice to help improve the plants health (i.e. any water, move closer to sunlight, etc) This part will be done by stats() & advice(). Increase days alive by 1.
     
-    + ask the user what he would like to do to the plant (listen for input and depending on the input run command) If the command is to save and quit then save game data to file and quit the game loop.
+    + ask the user what they would like to do to the plant (listen for input and depending on the input run command) If the command is to save and quit then save game data to file and quit the game loop.
     
     + maybe show animation and wait for 5 sec before the nextDay() command runs again if the health is higher than 0
     

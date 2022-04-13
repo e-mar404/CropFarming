@@ -6,10 +6,11 @@
 //
 
 #include <iostream>
+#include "Crop.h"
+
+
+using std::cout;
 
 int main() {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
-    
+    cout << "Hello w\n";
 }
