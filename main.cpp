@@ -12,5 +12,7 @@
 using std::cout;
 
 int main() {
-    cout << "Hello w\n";
+    Crop anyPlant;
+    
+    cout << anyPlant.getWater();
 }
