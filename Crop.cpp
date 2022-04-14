@@ -34,9 +34,14 @@ Crop::Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWith
 
 void Crop::nextDay(){
     // Set seed for random component of game
-    srand((unsigned int) time(NULL));
+    srand((unsigned int) time(0));
     
     // Increase daysAlive
     this->setDaysAlive(this->getDaysAlive() + 1);
+    
+    // Next Day message
+    std::cout << "Good morning here is a quick overview of what happened to your plant:\n";
+    this->setHealth((this->getHealth() - 30));
+
     
 }
