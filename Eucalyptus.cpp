@@ -21,7 +21,7 @@ void Eucalyptus::getInfo(){
     cout << "-Water level should stay between 3-5\n";
     cout << "-Sun Exposure should be between 4-6\n";
     cout << "-Soil should be changed every 10 days\n";
-    cout << "If these conditions are not met the health will decrease by a random amount on top of the small random amount the health decreases daily. Have fun :)\n\n";
+    cout << "If these conditions are not met the health will decrease by 1. Your plant is able to randomly get sick randomly, since you are only able to do two actions per day it is wise to plan ahead. If all the contidions are met health will increase by 1. Have fun :)\n\n";
 } 
 
 void Eucalyptus::dailyReport(){
@@ -31,8 +31,15 @@ void Eucalyptus::dailyReport(){
     cout << "Info about your plant:\n";
     cout << "Name: " << name << endl;
     cout << "Health: " << health << endl;
-    cout << "Days Alive: " << daysAlive << endl;
+    cout << "Days with soil: " << daysWithSoil << endl;
     cout << "Sun Exposure: " << sunLight << endl;
     cout << "Water Level: " << water << endl;
     cout << "Disease: " << d << endl << endl;
+}
+
+bool Eucalyptus::metRequirements(){
+    if (water >= 3 && water <= 5 && sunLight >= 4 && sunLight <= 8 && daysWithSoil <= 10){
+        return true;
+    }
+    return false;
 }

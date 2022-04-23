@@ -96,7 +96,6 @@ int main() {
 void enter(){
     std::string temp;
     std::getline(cin, temp);
-    cin.ignore();
 }
 
 void gameLoop(Crop* userPlant){
@@ -104,18 +103,19 @@ void gameLoop(Crop* userPlant){
     // Give initial stats of plant
     userPlant->getInfo();
     
-    cout << "See you tomorrow. Press enter to continue";
+    cout << "See you tomorrow. Press enter to continue\n";
     enter();
     
     // Run while plant is alive
     while (userPlant->getHealth() > 0) {
         
         userPlant->nextDay();
-        int choiceForTheDay;
+        int firstChoiceForTheDay;
+        int secondChoiceForTheDay;
         
 //        int answers[6] = {1, 2, 3, 4, 5, 6};
         
-        cout << "What would you like to do today:\n";
+        cout << "What would you like to do today: (type the first move press enter then type the second move and press enter again)\n";
         cout << "(1) Give water\n";
         cout << "(2) Change soil\n";
         cout << "(3) Move closer to the sun\n";
@@ -123,8 +123,8 @@ void gameLoop(Crop* userPlant){
         cout << "(5) Give medicine\n";
         cout << "(6) Save and quit\n";
         
-        cin >> choiceForTheDay;
-        cin.ignore();
+        cin >> firstChoiceForTheDay;
+        cin >> secondChoiceForTheDay;
        
 //        while ((std::find(std::begin(answers), std::end(answers), choiceForTheDay)) != std::end(answers)){
 //            cout << "Enter a valid input to keep going: ";
@@ -132,9 +132,9 @@ void gameLoop(Crop* userPlant){
 //            cin.ignore();
 //        }
         
-        switch (choiceForTheDay) {
+        switch (firstChoiceForTheDay) {
             case 1:
-                userPlant->addWater();
+                userPlant->addWater(2);
                 break;
             
             case 2:
@@ -163,6 +163,36 @@ void gameLoop(Crop* userPlant){
                 break;
         };
         
+        switch (secondChoiceForTheDay) {
+            case 1:
+                userPlant->addWater(2);
+                break;
+            
+            case 2:
+                userPlant->setDaysWithSoil(0);
+                break;
+            
+            case 3:
+                userPlant->getCloserToSun();
+                break;
+                
+            case 4:
+                userPlant->getAwayFromSun();
+                break;
+                
+            case 5:
+                userPlant->giveMedicine();
+                break;
+            
+            case 6:
+                saveGame();
+                return;
+                
+            default:
+                cout << "That is not a valid answer";
+                continue;
+                break;
+        };
         
         cout << "Bye see you tomorrow zzzz\n";
         cout << "press enter to go to the next day\n";

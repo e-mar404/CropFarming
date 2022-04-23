@@ -22,7 +22,7 @@ void Tulip::getInfo(){
     cout << "-Water level should stay between 5-8\n";
     cout << "-Sun Exposure should be between 8-10\n";
     cout << "-Soil should be changed every 5 days\n";
-    cout << "If these conditions are not met the health will decrease by a random amount on top of the small random amount the health decreases daily. Have fun :)\n\n";
+    cout << "If these conditions are not met the health will decrease by 1. Your plant is able to randomly get sick randomly, since you are only able to do two action per day it is wise to plan ahead. If all the contidions are met health will increase by 1. Have fun :)\n\n";
 } 
 
 void Tulip::dailyReport(){
@@ -32,8 +32,15 @@ void Tulip::dailyReport(){
     cout << "Info about your plant:\n";
     cout << "Name: " << name << endl;
     cout << "Health: " << health << endl;
-    cout << "Days Alive: " << daysAlive << endl;
+    cout << "Days with soil: " << daysWithSoil << endl;
     cout << "Sun Exposure: " << sunLight << endl;
     cout << "Water Level: " << water << endl;
     cout << "Disease: " << d << endl << endl;
+}
+
+bool Tulip::metRequirements(){
+    if(water >= 5 && water <= 8 && sunLight >= 8 && sunLight <= 10 && daysWithSoil <= 5){
+        return true;
+    }
+    return false;
 }

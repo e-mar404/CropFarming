@@ -23,11 +23,14 @@ class Crop{
     virtual ~Crop() {};
     
     // Functions used to interact with the crop
-        void addWater() {water++;}
+        void addWater(int n) {water += n;}
+        void decreaseWater(int n) {water -= n;}
         void getCloserToSun() {sunLight++;}
         void getAwayFromSun() {sunLight--;}
         void changeSoil() {daysWithSoil = 0;}
         void giveMedicine() {disease = false;}
+        void decreaseHealth(int n) {health -= n;}
+        void increaseHealth(int n) {health += n;}
     
     // Set/Get Functions for loading and saving of game
         void setHealth(int _health) {health = _health;}
@@ -45,6 +48,7 @@ class Crop{
         bool getDisease() {return disease;}
     
     // Virtual functions
+        virtual bool metRequirements() = 0;
         virtual std::string getType() = 0;
         virtual void getInfo() = 0;
         virtual void dailyReport() = 0;

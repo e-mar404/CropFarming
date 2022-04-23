@@ -24,7 +24,7 @@ class Eucalyptus: public Crop{
         
     // Get/Set functions
         void setName(std::string _name) {name = _name;}
-        
+        bool metRequirements();
         std::string getType() {return "Eucalyptus\n";}
         std::string getName() {return name;}
         void getInfo();
