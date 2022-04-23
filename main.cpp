@@ -10,6 +10,8 @@
 #include <chrono>
 #include <thread>
 #include <string>
+#include <algorithm>
+#include <iterator>
 #include "Crop.h"
 #include "Tulip.h"
 #include "Eucalyptus.h"
@@ -18,10 +20,22 @@ using std::cout, std::cin, std::endl, std::string;
 
 void gameLoop(Crop* userPlant);
 
-int randint(){
-    srand((unsigned int) time(0));
-    return (rand() % 3);
+void loadGame(){
+    cout << "loading game\n";
 }
+
+void saveGame(){
+    cout << "saved\n";
+}
+
+void enter();
+void clearScreen();
+
+//int randint(){
+//    srand((unsigned int) time(0));
+//    return (rand() % 3);
+//}
+
 
 int main() {
     
@@ -44,6 +58,8 @@ int main() {
         cout << "What would you like to name your new plant :)\n";
         cin >> _name;
         userPlant->setName(_name);
+        
+        clearScreen();
         
         //Loading sreen for plant
         cout << "Loading game for " << userPlant->getName() << "..." << endl << endl;
@@ -77,16 +93,19 @@ int main() {
     return 0;
 }
 
-void gameLoop(Crop* userPlant){
-    // temp var for 'press enter...'
+void enter(){
     std::string temp;
+    std::getline(cin, temp);
+    cin.ignore();
+}
+
+void gameLoop(Crop* userPlant){
     
     // Give initial stats of plant
     userPlant->getInfo();
     
-    cout << "Press enter to continue\n";
-    std::getline(cin, temp);
-    cin.ignore();
+    cout << "See you tomorrow. Press enter to continue";
+    enter();
     
     // Run while plant is alive
     while (userPlant->getHealth() > 0) {
@@ -94,18 +113,28 @@ void gameLoop(Crop* userPlant){
         userPlant->nextDay();
         int choiceForTheDay;
         
-        cout << "what would you like to do to your plant:\n";
+//        int answers[6] = {1, 2, 3, 4, 5, 6};
+        
+        cout << "What would you like to do today:\n";
         cout << "(1) Give water\n";
         cout << "(2) Change soil\n";
-        cout << "(3) Get closer to the sun\n";
-        cout << "(4) Give medicine\n";
-        cout << "(5) Pick out bugs\n";
+        cout << "(3) Move closer to the sun\n";
+        cout << "(4) Move away from sun\n";
+        cout << "(5) Give medicine\n";
+        cout << "(6) Save and quit\n";
         
         cin >> choiceForTheDay;
+        cin.ignore();
+       
+//        while ((std::find(std::begin(answers), std::end(answers), choiceForTheDay)) != std::end(answers)){
+//            cout << "Enter a valid input to keep going: ";
+//            cin >> choiceForTheDay;
+//            cin.ignore();
+//        }
         
         switch (choiceForTheDay) {
             case 1:
-                userPlant->setWater(userPlant->getWater() + 1);
+                userPlant->addWater();
                 break;
             
             case 2:
@@ -113,23 +142,37 @@ void gameLoop(Crop* userPlant){
                 break;
             
             case 3:
-                userPlant->setSunLight(userPlant->getSunLight() + 1);
+                userPlant->getCloserToSun();
                 break;
                 
             case 4:
-                userPlant->giveMedicine();
+                userPlant->getAwayFromSun();
                 break;
                 
             case 5:
-                userPlant->removeBugs();
+                userPlant->giveMedicine();
                 break;
-
+            
+            case 6:
+                saveGame();
+                return;
+                
             default:
+                cout << "That is not a valid answer";
+                continue;
                 break;
         };
         
-        cout << "Bye see you tomorrow zzzz";
-        std::this_thread::sleep_for(std::chrono::seconds(5));
         
+        cout << "Bye see you tomorrow zzzz\n";
+        cout << "press enter to go to the next day\n";
+        enter();
+        
+    }
+}
+
+void clearScreen() {
+    for (int i = 0; i < 30; ++i){
+        cout << endl;
     }
 }

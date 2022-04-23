@@ -17,13 +17,16 @@ class Crop{
         Crop();
     
     // Overloaded Constructor for loading game
-        Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma);
+        Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _disease);
+    
+    //Destructor
+    virtual ~Crop() {};
     
     // Functions used to interact with the crop
         void addWater() {water++;}
         void getCloserToSun() {sunLight++;}
+        void getAwayFromSun() {sunLight--;}
         void changeSoil() {daysWithSoil = 0;}
-        void removeBugs() {bugs = false;}
         void giveMedicine() {disease = false;}
     
     // Set/Get Functions for loading and saving of game
@@ -32,7 +35,6 @@ class Crop{
         void setSunLight(int _sunlight) {sunLight = _sunlight;}
         void setDaysWithSoil(int _daysWithSoil) {daysWithSoil = _daysWithSoil;}
         void setDaysAlive(int _daysAlive) {daysAlive = _daysAlive;}
-        void setBugs(bool _bugs) {bugs = _bugs;}
         void setDisease(bool _disease) {disease = _disease;}
     
         int getHealth() {return health;}
@@ -40,16 +42,12 @@ class Crop{
         int getSunLight() {return sunLight;}
         int getDaysWithSoil() {return daysWithSoil;}
         int getDaysAlive() {return daysAlive;}
-        bool getBugs() {return bugs;}
         bool getDisease() {return disease;}
-        bool getLigma() {return ligma;}
     
-    // Virtual function that will get the type of crop to save the game
+    // Virtual functions
         virtual std::string getType() = 0;
-    // Virtual funciton that will give the description and ranges of the type of plant
         virtual void getInfo() = 0;
-    
-    // NextDay Function that will update and give random stats to the plant
+        virtual void dailyReport() = 0;
         void nextDay();
     
     protected:
@@ -60,10 +58,7 @@ class Crop{
         int water;
         int sunLight;
         int daysWithSoil;
-        bool bugs;
         bool disease;
-    // Instant death
-        bool ligma;
         
 }; 
 

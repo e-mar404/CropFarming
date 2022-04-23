@@ -13,12 +13,7 @@ using std::cout, std::endl;
 void Eucalyptus::getInfo(){
     std::string temp;
     
-    cout << "Info about your plant:\n";
-    cout << "Name: " << name << endl;
-    cout << "Health: " << health << endl;
-    cout << "Days Alive: " << daysAlive << endl;
-    cout << "Sun Exposure: " << sunLight << endl;
-    cout << "Water Level: " << water << endl << endl;
+    dailyReport();
     cout << "press enter to continue\n";
     std::getline(std::cin, temp);
     std::cin.ignore();
@@ -29,3 +24,15 @@ void Eucalyptus::getInfo(){
     cout << "If these conditions are not met the health will decrease by a random amount on top of the small random amount the health decreases daily. Have fun :)\n\n";
 } 
 
+void Eucalyptus::dailyReport(){
+    std::string d;
+    if(!disease){d = "No disease";} else {d = "Plant is sick";}
+    
+    cout << "Info about your plant:\n";
+    cout << "Name: " << name << endl;
+    cout << "Health: " << health << endl;
+    cout << "Days Alive: " << daysAlive << endl;
+    cout << "Sun Exposure: " << sunLight << endl;
+    cout << "Water Level: " << water << endl;
+    cout << "Disease: " << d << endl << endl;
+}
