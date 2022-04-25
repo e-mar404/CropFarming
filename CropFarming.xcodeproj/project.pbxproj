@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D311FF928172EB300D76390 /* gameWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameWindow.h; sourceTree = "<group>"; };
 		0D5484342806609900891B33 /* Tulip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tulip.h; sourceTree = "<group>"; };
 		0D548435280660A700891B33 /* Tulip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tulip.cpp; sourceTree = "<group>"; };
 		0D548437280660B500891B33 /* Eucalyptus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Eucalyptus.h; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				0D9AB4B928039E67009E2C5D /* main.cpp */,
+				0D311FF928172EB300D76390 /* gameWindow.h */,
 				0D9AB4C72803AE19009E2C5D /* Crop.h */,
 				0D9AB4C42803ADE1009E2C5D /* Crop.cpp */,
 				0D5484342806609900891B33 /* Tulip.h */,
@@ -149,6 +151,7 @@
 		0D9AB4BB28039E67009E2C5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -200,13 +203,18 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				ORDER_FILE = "";
+				OTHER_LDFLAGS = "-lncurses";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Debug;
 		};
 		0D9AB4BC28039E67009E2C5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -251,7 +259,11 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ORDER_FILE = "";
+				OTHER_LDFLAGS = "-lncurses";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Release;
 		};
