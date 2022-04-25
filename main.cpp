@@ -11,11 +11,11 @@
 #include <string>
 #include <algorithm>
 #include <iterator>
-#include <ncurses.h>
 #include <time.h>
 #include "Crop.h"
 #include "Tulip.h"
 #include "Eucalyptus.h"
+#include "gameWindow.h"
 
 using std::cout, std::cin, std::endl, std::string;
 
