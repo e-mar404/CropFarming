@@ -10,7 +10,7 @@
 #include "Eucalyptus.h"
 
 using std::cout, std::endl;
-
+ 
 Crop::Crop(){
     health = 20;
     daysAlive = 0;

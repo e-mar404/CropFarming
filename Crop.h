@@ -61,7 +61,7 @@ class Crop{
         virtual void getInfo() = 0;
 //        virtual void dailyReport() = 0;
         void nextDay();
-    
+ 
     // enum levels
     enum level {
         good = 0,

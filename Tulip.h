@@ -17,7 +17,7 @@ class Tulip: public Crop{
             water = 7;
             sunLight = 9;
         }
-    
+   
     // Overloaded
         Tulip(std::string _name, int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, int _bugs): Crop(_health, _daysAlive, _water, _sunLight, _daysWithSoil, _bugs){
             name = _name;

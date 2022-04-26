@@ -9,7 +9,7 @@
 #define Eucalyptus_h
 
 class Eucalyptus: public Crop{
-    
+ 
     public:
     // Constructor
         Eucalyptus(): Crop(){

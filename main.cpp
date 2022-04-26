@@ -90,7 +90,7 @@ int main() {
     
     return 0;
 }
-
+ 
 void gameLoop(Crop* userPlant, WINDOW *win, gameWindow w){
     
     while (gameState == start){

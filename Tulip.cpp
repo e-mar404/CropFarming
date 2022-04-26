@@ -51,7 +51,7 @@ bool Tulip::metRequirements(){
         waterLevel = bad;
         met = false;
     }
-    
+  
     // Sunlight reqs
     if (sunLight >= 8 && sunLight <= 10){
         sunLightLevel = good;

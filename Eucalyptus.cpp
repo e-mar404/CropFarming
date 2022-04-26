@@ -38,7 +38,7 @@ void Eucalyptus::dailyReport(){
     cout << "Disease: " << d << endl << endl;
 }
 */
-
+ 
 bool Eucalyptus::metRequirements(){
     bool met = true;
     
