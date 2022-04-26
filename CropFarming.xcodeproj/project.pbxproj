@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D311FFB281762BE00D76390 /* gameWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D311FFA281762BE00D76390 /* gameWindow.cpp */; };
 		0D548436280660A700891B33 /* Tulip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D548435280660A700891B33 /* Tulip.cpp */; };
 		0D548439280660C200891B33 /* Eucalyptus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D548438280660C200891B33 /* Eucalyptus.cpp */; };
 		0D9AB4BA28039E67009E2C5D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9AB4B928039E67009E2C5D /* main.cpp */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0D311FF928172EB300D76390 /* gameWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameWindow.h; sourceTree = "<group>"; };
+		0D311FFA281762BE00D76390 /* gameWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gameWindow.cpp; sourceTree = "<group>"; };
 		0D5484342806609900891B33 /* Tulip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tulip.h; sourceTree = "<group>"; };
 		0D548435280660A700891B33 /* Tulip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tulip.cpp; sourceTree = "<group>"; };
 		0D548437280660B500891B33 /* Eucalyptus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Eucalyptus.h; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				0D9AB4B928039E67009E2C5D /* main.cpp */,
 				0D311FF928172EB300D76390 /* gameWindow.h */,
+				0D311FFA281762BE00D76390 /* gameWindow.cpp */,
 				0D9AB4C72803AE19009E2C5D /* Crop.h */,
 				0D9AB4C42803ADE1009E2C5D /* Crop.cpp */,
 				0D5484342806609900891B33 /* Tulip.h */,
@@ -140,6 +143,7 @@
 			files = (
 				0D548436280660A700891B33 /* Tulip.cpp in Sources */,
 				0D9AB4BA28039E67009E2C5D /* main.cpp in Sources */,
+				0D311FFB281762BE00D76390 /* gameWindow.cpp in Sources */,
 				0D548439280660C200891B33 /* Eucalyptus.cpp in Sources */,
 				0D9AB4C62803ADE1009E2C5D /* Crop.cpp in Sources */,
 			);
