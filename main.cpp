@@ -20,9 +20,24 @@
 
 using std::cout, std::cin, std::endl, std::string;
 
-void gameLoop(Crop* userPlant);
-void saveGame(Crop* userPlant);
+void saveGame(Crop* userPlant, WINDOW *win);
+void drawPlant(WINDOW *win);
+void gameLoop(Crop* userPlant, WINDOW *win, gameWindow w);
+void gameChoices(Crop* userPlant, WINDOW *win, gameWindow w);
+void inputGameChoice(Crop* userPlant, WINDOW *win, gameWindow w);
 
+enum choice {
+    done = 0,
+    chosing,
+    water,
+    closer_to_sun,
+    away_from_sun,
+    change_soil,
+    give_medicine,
+    save_quit
+};
+
+choice userAction = chosing;
 
 int main() {
     
@@ -39,155 +54,188 @@ int main() {
         w.inputStartMenu(win);
     }
 
-    // Choose plant type
+    // Chose plant type
     w.choosePlantType(win);
-    gameState = chosing_plant;
+
     while (gameState == chosing_plant){
         w.inputChoosePlantType(win);
     }
     
+    // Creation of plant depending on choice
     
-    /*
-    // Game if user chose Tulips on this dick
-    if (plantChoice == 1) {
-        // Creation of plant type tulip
-        Tulip *userPlant = new  Tulip();
-        cout << "You chose a " << userPlant->getType();
+    if (plantType == chose_tupil){
+        class Tulip *userPlant = new class Tulip();
         
-        // Ask what they would like to name the plant and assign name
-        string _name;
-        cout << "What would you like to name your new plant :)\n";
-        cin >> _name;
-        userPlant->setName(_name);
+        // Show instructions on the screen for a tulip
+        w.instructionsForTulip(win);
+        while (gameState == instructions) {
+            w.instructionsMenu(win);
+        }
         
-        //Loading sreen for plant
-        cout << "Loading game for " << userPlant->getName() << "..." << endl << endl;
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        
-        // Main game loop that runs while the plant is alive
-        gameLoop(userPlant);
-        
+        gameLoop(userPlant, win, w);
     }
     
-    // Game if user chose Eucalyptus dick
-    if (plantChoice == 2) {
-        Eucalyptus *userPlant = new Eucalyptus();
-        cout << "You chose a " << userPlant->getType();
+    if (plantType == chose_eucalyptus){
+        class Eucalyptus *userPlant = new class Eucalyptus();
         
-        // Ask what they would like to name the plant and assign name
-        string _name;
-        cout << "What would you like to name your new plant :)\n";
-        cin >> _name;
-        userPlant->setName(_name);
+        // Show instructions on the screen for eucalyptus
+        w.instructionsForEucalyptus(win);
+        while (gameState == instructions) {
+            w.instructionsMenu(win);
+        }
         
-        //Loading sreen for plant
-        cout << "Loading game for " << userPlant->getName() << "..." << endl << endl;
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        
-        // Main game loop that runs while the plant is alive
-        gameLoop(userPlant);
+        gameLoop(userPlant, win, w);
     }
     
-    */
     
     return 0;
 }
 
-void gameLoop(Crop* userPlant){
+void gameLoop(Crop* userPlant, WINDOW *win, gameWindow w){
     
-    // Give initial stats of plant
-    userPlant->getInfo();
-    
-    cout << "See you tomorrow. Press enter to continue\n";
-    
-    // Run while plant is alive
-    while (userPlant->getHealth() > 0) {
+    while (gameState == start){
+        // Clear past window and make new one
+        wclear(win);
+        box(win, 0, 0);
         
+        // Draw Plant
+        if (userPlant->getType() == "Tulip"){
+            w.drawTulip(win);
+        }
+        
+        // Put stats on bar, colored depending on level
+        w.stats(win, std::to_string(userPlant->getHealth()), std::to_string(userPlant->getWater()), std::to_string(userPlant->getSunLight()), std::to_string(userPlant->getDaysWithSoil()), std::to_string(userPlant->getBugs()), userPlant->getWaterLevel(), userPlant->getDaysWithSoilLevel(), userPlant->getSunLightLevel(), userPlant->getBugsLevel());
+        
+        // Draw userActions
+        gameChoices(userPlant, win, w);
+        userAction = chosing;
+        while (userAction != done) {
+            inputGameChoice(userPlant, win, w);
+        }
+        
+        // Next day
         userPlant->nextDay();
-        int firstChoiceForTheDay;
-        int secondChoiceForTheDay;
-        
-        
-        cout << "What would you like to do today: (type the first move press enter then type the second move and press enter again)\n";
-        cout << "(1) Give water\n";
-        cout << "(2) Change soil\n";
-        cout << "(3) Move closer to the sun\n";
-        cout << "(4) Move away from sun\n";
-        cout << "(5) Give medicine\n";
-        cout << "(6) Save and quit\n";
-        
-        cin >> firstChoiceForTheDay;
-        cin >> secondChoiceForTheDay;
-       
-        
-        switch (firstChoiceForTheDay) {
-            case 1:
-                userPlant->addWater(2);
-                break;
-            
-            case 2:
-                userPlant->setDaysWithSoil(0);
-                break;
-            
-            case 3:
-                userPlant->getCloserToSun();
-                break;
-                
-            case 4:
-                userPlant->getAwayFromSun();
-                break;
-                
-            case 5:
-                userPlant->giveMedicine();
-                break;
-            
-            case 6:
-                saveGame(userPlant);
-                return;
-                
-            default:
-                cout << "That is not a valid answer";
-                continue;
-                break;
-        };
-        
-        switch (secondChoiceForTheDay) {
-            case 1:
-                userPlant->addWater(2);
-                break;
-            
-            case 2:
-                userPlant->setDaysWithSoil(0);
-                break;
-            
-            case 3:
-                userPlant->getCloserToSun();
-                break;
-                
-            case 4:
-                userPlant->getAwayFromSun();
-                break;
-                
-            case 5:
-                userPlant->giveMedicine();
-                break;
-            
-            case 6:
-                saveGame(userPlant);
-                return;
-                
-            default:
-                cout << "That is not a valid answer";
-                continue;
-                break;
-        };
-        
-        cout << "Bye see you tomorrow zzzz\n";
-        cout << "press enter to go to the next day\n";
-        
     }
 }
 
-void saveGame(Crop* userPlant){
+void saveGame(Crop* userPlant, WINDOW *win){
+    wclear(win);
+    mvwprintw(win, 0, 0, "saving game");
+}
+
+// Menus
+void gameChoices(Crop* userPlant, WINDOW *win, gameWindow w){
+    wattron(win, COLOR_PAIR(5));
+    mvwprintw(win, w.getHeight()/5+11, w.getWidth()/10-2, "What would you like to do today:");
+    mvwprintw(win, w.getHeight()/5+12, w.getWidth()/10-2, "Give water (1)");
+    mvwprintw(win, w.getHeight()/5+13, w.getWidth()/10-2, "Change soil (2)");
+    mvwprintw(win, w.getHeight()/5+14, w.getWidth()/10-2, "Move closer to the sun (3)");
+    mvwprintw(win, w.getHeight()/5+15, w.getWidth()/10-2, "Move away from sun (4)");
+    mvwprintw(win, w.getHeight()/5+16, w.getWidth()/10-2, "Give pesticide (5)");
+    mvwprintw(win, w.getHeight()/5+17, w.getWidth()/10-2, "Save and quit (6)");
+    wattroff(win, COLOR_PAIR(5));
+}
+
+// Input
+
+void inputGameChoice(Crop *userPlant, WINDOW *win, gameWindow w){
+    keypad(win, true);
+    halfdelay(100);
     
+    switch (wgetch(win)) {
+        case '1':
+            gameChoices(userPlant, win, w);
+            wattron(win, A_STANDOUT);
+            mvwprintw(win, w.getHeight()/5+12, w.getWidth()/10-2, "Give water (1)");
+            wattroff(win, A_STANDOUT);
+            userAction = water;
+            break;
+        
+        case '2':
+            gameChoices(userPlant, win, w);
+            wattron(win, A_STANDOUT);
+            mvwprintw(win, w.getHeight()/5+13, w.getWidth()/10-2, "Change soil (2)");
+            wattroff(win, A_STANDOUT);
+            userAction = change_soil;
+            break;
+        
+        case '3':
+            gameChoices(userPlant, win, w);
+            wattron(win, A_STANDOUT);
+            mvwprintw(win, w.getHeight()/5+14, w.getWidth()/10-2, "Move closer to the sun (3)");
+            wattroff(win, A_STANDOUT);
+            userAction = closer_to_sun;
+            break;
+            
+        case '4':
+            gameChoices(userPlant, win, w);
+            wattron(win, A_STANDOUT);
+            mvwprintw(win, w.getHeight()/5+15, w.getWidth()/10-2, "Move away from sun (4)");
+            wattroff(win, A_STANDOUT);
+            userAction = away_from_sun;
+            break;
+            
+        case '5':
+            gameChoices(userPlant, win, w);
+            wattron(win, A_STANDOUT);
+            mvwprintw(win, w.getHeight()/5+16, w.getWidth()/10-2, "Give pesticide (5)");
+            wattroff(win, A_STANDOUT);
+            userAction = give_medicine;
+            break;
+        
+        case '6':
+            gameChoices(userPlant, win, w);
+            wattron(win, A_STANDOUT);
+            mvwprintw(win, w.getHeight()/5+17, w.getWidth()/10-2, "Save and quit (6)");
+            wattroff(win, A_STANDOUT);
+            userAction = save_quit;
+            break;
+            
+        case 'e':
+            if (userAction == water){
+                wclear(win);
+                box(win, 0, 0);
+                userPlant->addWater(2);
+                userAction = done;
+            }
+            if (userAction == closer_to_sun) {
+                wclear(win);
+                box(win, 0, 0);
+                userPlant->getCloserToSun();
+                userAction = done;
+            }
+            if (userAction == away_from_sun){
+                wclear(win);
+                box(win, 0, 0);
+                userPlant->getAwayFromSun();
+                userAction = done;
+            }
+            if (userAction == change_soil){
+                wclear(win);
+                box(win, 0, 0);
+                userPlant->setDaysWithSoil(0);
+                userAction = done;
+            }
+            if (userAction == give_medicine){
+                wclear(win);
+                box(win, 0, 0);
+                userPlant->givePestiside();
+                userAction = done;
+            }
+            if (userAction == save_quit){
+                wclear(win);
+                box(win, 0, 0);
+                saveGame(userPlant, win);
+                userAction = done;
+            }
+            if (userAction != chosing){
+                userAction = done;
+            }
+            break;
+            
+        default:
+            gameChoices(userPlant, win, w);
+            userAction = chosing;
+            break;
+    };
 }
