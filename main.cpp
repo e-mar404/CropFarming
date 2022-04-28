@@ -39,6 +39,8 @@ enum choice {
 
 choice userAction = chosing;
 
+int Index = 0;
+
 int main() {
     
     // Make window
@@ -143,52 +145,105 @@ void inputGameChoice(Crop *userPlant, WINDOW *win, gameWindow w){
     halfdelay(100);
     
     switch (wgetch(win)) {
-        case '1':
+        case KEY_UP:
             gameChoices(userPlant, win, w);
-            wattron(win, A_STANDOUT);
-            mvwprintw(win, w.getHeight()/5+12, w.getWidth()/10-2, "Give water (1)");
-            wattroff(win, A_STANDOUT);
-            userAction = water;
-            break;
-        
-        case '2':
-            gameChoices(userPlant, win, w);
-            wattron(win, A_STANDOUT);
-            mvwprintw(win, w.getHeight()/5+13, w.getWidth()/10-2, "Change soil (2)");
-            wattroff(win, A_STANDOUT);
-            userAction = change_soil;
-            break;
-        
-        case '3':
-            gameChoices(userPlant, win, w);
-            wattron(win, A_STANDOUT);
-            mvwprintw(win, w.getHeight()/5+14, w.getWidth()/10-2, "Move closer to the sun (3)");
-            wattroff(win, A_STANDOUT);
-            userAction = closer_to_sun;
+            if(Index > 0 && Index <= 5){
+                Index--;
+            }
+
+            switch (Index) {
+                case 0:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+12, w.getWidth()/10-2, "Give water (1)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = water;
+                    break;
+                
+                case 1:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+13, w.getWidth()/10-2, "Change soil (2)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = change_soil;
+                    break;
+                
+                case 2:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+14, w.getWidth()/10-2, "Move closer to the sun (3)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = closer_to_sun;
+                    break;
+                    
+                case 3:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+15, w.getWidth()/10-2, "Move away from sun (4)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = away_from_sun;
+                    break;
+                    
+                case 4:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+16, w.getWidth()/10-2, "Give pesticide (5)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = give_medicine;
+                    break;
+                
+                case 5:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+17, w.getWidth()/10-2, "Save and quit (6)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = save_quit;
+                    break;
+            }
             break;
             
-        case '4':
+        case KEY_DOWN:
             gameChoices(userPlant, win, w);
-            wattron(win, A_STANDOUT);
-            mvwprintw(win, w.getHeight()/5+15, w.getWidth()/10-2, "Move away from sun (4)");
-            wattroff(win, A_STANDOUT);
-            userAction = away_from_sun;
-            break;
-            
-        case '5':
-            gameChoices(userPlant, win, w);
-            wattron(win, A_STANDOUT);
-            mvwprintw(win, w.getHeight()/5+16, w.getWidth()/10-2, "Give pesticide (5)");
-            wattroff(win, A_STANDOUT);
-            userAction = give_medicine;
-            break;
-        
-        case '6':
-            gameChoices(userPlant, win, w);
-            wattron(win, A_STANDOUT);
-            mvwprintw(win, w.getHeight()/5+17, w.getWidth()/10-2, "Save and quit (6)");
-            wattroff(win, A_STANDOUT);
-            userAction = save_quit;
+            if(Index >= 0 && Index < 5){
+                Index++;
+            }
+            switch (Index) {
+                case 0:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+12, w.getWidth()/10-2, "Give water (1)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = water;
+                    break;
+                
+                case 1:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+13, w.getWidth()/10-2, "Change soil (2)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = change_soil;
+                    break;
+                
+                case 2:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+14, w.getWidth()/10-2, "Move closer to the sun (3)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = closer_to_sun;
+                    break;
+                    
+                case 3:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+15, w.getWidth()/10-2, "Move away from sun (4)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = away_from_sun;
+                    break;
+                    
+                case 4:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+16, w.getWidth()/10-2, "Give pesticide (5)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = give_medicine;
+                    break;
+                
+                case 5:
+                    wattron(win, A_STANDOUT);
+                    mvwprintw(win, w.getHeight()/5+17, w.getWidth()/10-2, "Save and quit (6)");
+                    wattroff(win, A_STANDOUT);
+                    userAction = save_quit;
+                    break;
+            }
             break;
             
         case 'e':
