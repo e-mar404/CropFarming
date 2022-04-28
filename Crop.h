@@ -7,8 +7,10 @@
 
 #ifndef Crop_h
 #define Crop_h
+//#pragma once
 
 #include <iostream>
+
 
 class Crop{
     
@@ -17,7 +19,7 @@ class Crop{
         Crop();
     
     // Overloaded Constructor for loading game
-        Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _disease);
+        Crop(int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, int _bugs);
     
     //Destructor
     virtual ~Crop() {};
@@ -28,7 +30,7 @@ class Crop{
         void getCloserToSun() {sunLight++;}
         void getAwayFromSun() {sunLight--;}
         void changeSoil() {daysWithSoil = 0;}
-        void giveMedicine() {disease = false;}
+        void givePestiside() {bugs = 0;}
         void decreaseHealth(int n) {health -= n;}
         void increaseHealth(int n) {health += n;}
     
@@ -38,22 +40,35 @@ class Crop{
         void setSunLight(int _sunlight) {sunLight = _sunlight;}
         void setDaysWithSoil(int _daysWithSoil) {daysWithSoil = _daysWithSoil;}
         void setDaysAlive(int _daysAlive) {daysAlive = _daysAlive;}
-        void setDisease(bool _disease) {disease = _disease;}
+        void setBugs(int _bugs) {bugs = _bugs;}
     
         int getHealth() {return health;}
         int getWater() {return water;}
         int getSunLight() {return sunLight;}
         int getDaysWithSoil() {return daysWithSoil;}
         int getDaysAlive() {return daysAlive;}
-        bool getDisease() {return disease;}
+        int getBugs() {return bugs;}
+    
+    // get functions for enum vars of levels
+        int getWaterLevel() {return waterLevel;}
+        int getSunLightLevel() {return sunLightLevel;}
+        int getDaysWithSoilLevel() {return soilLevel;}
+        int getBugsLevel() {return bugsLevel;}
     
     // Virtual functions
         virtual bool metRequirements() = 0;
         virtual std::string getType() = 0;
         virtual void getInfo() = 0;
-        virtual void dailyReport() = 0;
+//        virtual void dailyReport() = 0;
         void nextDay();
-    
+ 
+    // enum levels
+    enum level {
+        good = 0,
+        low,
+        bad
+    };
+
     protected:
     // Vars that cant be interacted with
         int health;
@@ -62,7 +77,12 @@ class Crop{
         int water;
         int sunLight;
         int daysWithSoil;
-        bool disease;
+        int bugs;
+    // Enum level vars
+        level waterLevel = good;
+        level sunLightLevel = good;
+        level soilLevel = good;
+        level bugsLevel = good;
         
 }; 
 

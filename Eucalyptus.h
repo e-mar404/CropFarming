@@ -9,7 +9,7 @@
 #define Eucalyptus_h
 
 class Eucalyptus: public Crop{
-    
+ 
     public:
     // Constructor
         Eucalyptus(): Crop(){
@@ -18,7 +18,7 @@ class Eucalyptus: public Crop{
             sunLight = 5;
         }
     // Overloaded
-        Eucalyptus(std::string _name, int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma): Crop(_health, _daysAlive, _water, _sunLight, _daysWithSoil, _disease){
+        Eucalyptus(std::string _name, int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, int _bugs): Crop(_health, _daysAlive, _water, _sunLight, _daysWithSoil, _bugs){
             name = _name;
         }
         
@@ -28,7 +28,6 @@ class Eucalyptus: public Crop{
         std::string getType() {return "Eucalyptus\n";}
         std::string getName() {return name;}
         void getInfo();
-        void dailyReport();
     
     private:
         std::string name;

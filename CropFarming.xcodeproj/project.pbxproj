@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D548436280660A700891B33 /* Tulip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D548435280660A700891B33 /* Tulip.cpp */; };
+		0D548439280660C200891B33 /* Eucalyptus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D548438280660C200891B33 /* Eucalyptus.cpp */; };
+		0D9AB4BA28039E67009E2C5D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9AB4B928039E67009E2C5D /* main.cpp */; };
+		0D9AB4C62803ADE1009E2C5D /* Crop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D9AB4C42803ADE1009E2C5D /* Crop.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0D9AB4B428039E67009E2C5D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0D311FF928172EB300D76390 /* gameWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameWindow.h; sourceTree = "<group>"; };
+		0D5484342806609900891B33 /* Tulip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tulip.h; sourceTree = "<group>"; };
+		0D548435280660A700891B33 /* Tulip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tulip.cpp; sourceTree = "<group>"; };
+		0D548437280660B500891B33 /* Eucalyptus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Eucalyptus.h; sourceTree = "<group>"; };
+		0D548438280660C200891B33 /* Eucalyptus.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Eucalyptus.cpp; sourceTree = "<group>"; };
+		0D9AB4B628039E67009E2C5D /* CropFarming */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CropFarming; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D9AB4B928039E67009E2C5D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0D9AB4C22803A5DA009E2C5D /* ProjectPlan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectPlan.txt; sourceTree = "<group>"; };
+		0D9AB4C42803ADE1009E2C5D /* Crop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Crop.cpp; sourceTree = "<group>"; };
+		0D9AB4C72803AE19009E2C5D /* Crop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Crop.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D9AB4B328039E67009E2C5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D9AB4AD28039E67009E2C5D = {
+			isa = PBXGroup;
+			children = (
+				0D9AB4B828039E67009E2C5D /* CropFarming */,
+				0D9AB4B728039E67009E2C5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D9AB4B728039E67009E2C5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D9AB4B628039E67009E2C5D /* CropFarming */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D9AB4B828039E67009E2C5D /* CropFarming */ = {
+			isa = PBXGroup;
+			children = (
+				0D9AB4B928039E67009E2C5D /* main.cpp */,
+				0D311FF928172EB300D76390 /* gameWindow.h */,
+				0D9AB4C72803AE19009E2C5D /* Crop.h */,
+				0D9AB4C42803ADE1009E2C5D /* Crop.cpp */,
+				0D5484342806609900891B33 /* Tulip.h */,
+				0D548435280660A700891B33 /* Tulip.cpp */,
+				0D548437280660B500891B33 /* Eucalyptus.h */,
+				0D548438280660C200891B33 /* Eucalyptus.cpp */,
+				0D9AB4C22803A5DA009E2C5D /* ProjectPlan.txt */,
+			);
+			path = CropFarming;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D9AB4B528039E67009E2C5D /* CropFarming */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D9AB4BD28039E67009E2C5D /* Build configuration list for PBXNativeTarget "CropFarming" */;
+			buildPhases = (
+				0D9AB4B228039E67009E2C5D /* Sources */,
+				0D9AB4B328039E67009E2C5D /* Frameworks */,
+				0D9AB4B428039E67009E2C5D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CropFarming;
+			productName = CropFarming;
+			productReference = 0D9AB4B628039E67009E2C5D /* CropFarming */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D9AB4AE28039E67009E2C5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					0D9AB4B528039E67009E2C5D = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 0D9AB4B128039E67009E2C5D /* Build configuration list for PBXProject "CropFarming" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D9AB4AD28039E67009E2C5D;
+			productRefGroup = 0D9AB4B728039E67009E2C5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D9AB4B528039E67009E2C5D /* CropFarming */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D9AB4B228039E67009E2C5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D548436280660A700891B33 /* Tulip.cpp in Sources */,
+				0D9AB4BA28039E67009E2C5D /* main.cpp in Sources */,
+				0D548439280660C200891B33 /* Eucalyptus.cpp in Sources */,
+				0D9AB4C62803ADE1009E2C5D /* Crop.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0D9AB4BB28039E67009E2C5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				ORDER_FILE = "";
+				OTHER_LDFLAGS = "-lncurses";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+			};
+			name = Debug;
+		};
+		0D9AB4BC28039E67009E2C5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ORDER_FILE = "";
+				OTHER_LDFLAGS = "-lncurses";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
+			};
+			name = Release;
+		};
+		0D9AB4BE28039E67009E2C5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0D9AB4BF28039E67009E2C5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D9AB4B128039E67009E2C5D /* Build configuration list for PBXProject "CropFarming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D9AB4BB28039E67009E2C5D /* Debug */,
+				0D9AB4BC28039E67009E2C5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D9AB4BD28039E67009E2C5D /* Build configuration list for PBXNativeTarget "CropFarming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D9AB4BE28039E67009E2C5D /* Debug */,
+				0D9AB4BF28039E67009E2C5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D9AB4AE28039E67009E2C5D /* Project object */;
+}
