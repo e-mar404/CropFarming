@@ -1,0 +1,81 @@
+What is needed in the project?
+
+OBJECTS:
+    Crop (parent)
+     - sunLightReceived
+     - waterReceived
+     - daysWithSoil
+     - bugs
+     - disease
+     - health
+     - daysAlive
+
+    Plant1 {Tulip} (child)
+    Requires:
+        + medium amount of water, sunlight and change soil every 3 days
+        
+        
+    Plant3 {Eucalyptus} (child)
+    Requirements:
+        + medium sunlight exposure
+        + low amount of water
+        + change soil every 5 days
+        
+------------------------------------------------------------------------------------------------------------
+
+FUNCTIONS:
+    - nextDay() [increases or decreases stats depending on what the user did]
+    {global}
+    
+    - stats() [give the stats of the plants]
+    {global/will be called by nextDay()}
+    
+    - advice() [what can be done to help the plant]
+    {global/will be called by nextDay()}
+    
+    - saveGame() [get all data and output to file]
+    {global}
+    
+    - loadGame() [called only if chosen on the main menu to make plant object with data on file]
+    {global}
+    
+    - addWater() [increase water on plant]
+    {crop/inherited}
+    
+    - getCloserToSun [increases the sunlight received]
+    {crop/inherited}
+    
+    - changeSoil [resets the daysWithSoil var]
+    {crop/inherited}
+    
+    - removeBugs [set bool bugs to false]
+    {crop/inherited}
+    
+    - giveMedicine [will set bool disease to false]
+    {crop/inherited}
+    
+
+------------------------------------------------------------------------------------------------------------
+
+START MENU:
+
+    + show name of game and small acsii art
+    + new game or load (if load call loadGame())
+
+
+------------------------------------------------------------------------------------------------------------
+
+GAME LOGIC:
+
+While the plant's health is above 0{
+    
+    + nextDay() -> give stats of plant and any advice to help improve the plants health (i.e. any water, move closer to sunlight, etc) This part will be done by stats() & advice(). Increase days alive by 1.
+    
+    + ask the user what they would like to do to the plant (listen for input and depending on the input run command) If the command is to save and quit then save game data to file and quit the game loop.
+    
+    + maybe show animation and wait for 5 sec before the nextDay() command runs again if the health is higher than 0
+    
+}
+
+
+
