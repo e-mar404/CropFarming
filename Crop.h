@@ -5,9 +5,9 @@
 //  Created by emilio on 4/10/22.
 //
 
-//#ifndef Crop_h
-//#define Crop_h
-#pragma once
+#ifndef Crop_h
+#define Crop_h
+//#pragma once
 
 #include <iostream>
 
@@ -86,4 +86,4 @@ class Crop{
         
 }; 
 
-//#endif /* Crop_h */
+#endif /* Crop_h */

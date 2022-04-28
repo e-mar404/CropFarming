@@ -13,7 +13,6 @@ using std::cout, std::endl;
 void Eucalyptus::getInfo(){
     std::string temp;
     
-//    dailyReport();
     cout << "press enter to continue\n";
     std::getline(std::cin, temp);
     std::cin.ignore();
@@ -24,20 +23,6 @@ void Eucalyptus::getInfo(){
     cout << "If these conditions are not met the health will decrease by 1. Your plant is able to randomly get sick randomly, since you are only able to do two actions per day it is wise to plan ahead. If all the contidions are met health will increase by 1. Have fun :)\n\n";
 } 
 
-/*
-void Eucalyptus::dailyReport(){
-    std::string d;
-    if(!disease){d = "No disease";} else {d = "Plant is sick";}
-    
-    cout << "Info about your plant:\n";
-    cout << "Name: " << name << endl;
-    cout << "Health: " << health << endl;
-    cout << "Days with soil: " << daysWithSoil << endl;
-    cout << "Sun Exposure: " << sunLight << endl;
-    cout << "Water Level: " << water << endl;
-    cout << "Disease: " << d << endl << endl;
-}
-*/
  
 bool Eucalyptus::metRequirements(){
     bool met = true;

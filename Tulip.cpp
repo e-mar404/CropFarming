@@ -14,7 +14,6 @@ using std::cout, std::cin, std::endl;
 void Tulip::getInfo(){
     std::string temp;
     
-//    dailyReport();
     cout << "Here are some important special care tips for your plant:\n";
     cout << "-Water level should stay between 4-9\n";
     cout << "-Sun Exposure should be between 7-11\n";
@@ -22,20 +21,6 @@ void Tulip::getInfo(){
     cout << "If these conditions are not met the health will decrease by 1. Your plant is able to randomly get sick randomly, since you are only able to do two action per day it is wise to plan ahead. If all the contidions are met health will increase by 1. Have fun :)\n\n";
 } 
 
-/*
-void Tulip::dailyReport(){
-    std::string d;
-    if(!disease){d = "No disease";} else {d = "Plant is sick";}
-    
-    cout << "Info about your plant:\n";
-    cout << "Name: " << name << endl;
-    cout << "Health: " << health << endl;
-    cout << "Days with soil: " << daysWithSoil << endl;
-    cout << "Sun Exposure: " << sunLight << endl;
-    cout << "Water Level: " << water << endl;
-    cout << "Disease: " << d << endl << endl;
-}
-*/
 
 bool Tulip::metRequirements(){
     bool met = true;
