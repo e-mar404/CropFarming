@@ -17,18 +17,19 @@ class Tulip: public Crop{
             water = 7;
             sunLight = 9;
         }
-   
+    
     // Overloaded
-        Tulip(std::string _name, int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, int _bugs): Crop(_health, _daysAlive, _water, _sunLight, _daysWithSoil, _bugs){
+        Tulip(std::string _name, int _health, int _daysAlive, int _water, int _sunLight, int _daysWithSoil, bool _bugs, bool _disease, bool _ligma): Crop(_health, _daysAlive, _water, _sunLight, _daysWithSoil, _disease){
             name = _name;
         }
         
     // Get/set functions
         void setName(std::string _name) {name = _name;}
         bool metRequirements();
-        std::string getType() {return "Tulip";}
+        std::string getType() {return "Tulip\n";}
         std::string getName() {return name;}
         void getInfo();
+        void dailyReport();
         
     private:
         std::string name;
