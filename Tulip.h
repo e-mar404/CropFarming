@@ -7,6 +7,7 @@
 
 #ifndef Tulip_h
 #define Tulip_h
+#include "Crop.h"
 
 class Tulip: public Crop{
     
